@@ -1,0 +1,179 @@
+```css
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #020202;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+#canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Botones superiores */
+
+.top-buttons {
+    position: fixed;
+    top: 22px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.top-buttons button {
+    pointer-events: auto;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255, 215, 80, 0.7);
+    border-radius: 50%;
+
+    background: #ffbf18;
+    color: #1b1200;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 0 25px rgba(255, 180, 0, 0.3);
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.top-buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Texto */
+
+.message {
+    position: fixed;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    width: min(88%, 560px);
+
+    padding: 24px 20px;
+
+    text-align: center;
+
+    z-index: 4;
+
+    text-shadow:
+        0 2px 12px #000;
+
+    transition: 0.5s;
+}
+
+.message h1 {
+    font-size: clamp(30px, 7vw, 58px);
+
+    margin: 0 0 12px;
+
+    font-style: italic;
+}
+
+.message p {
+    font-size: clamp(16px, 4vw, 23px);
+
+    line-height: 1.55;
+
+    margin: 0 auto 20px;
+}
+
+.message button {
+    padding: 11px 30px;
+
+    border: 1px solid #f5d76e;
+
+    border-radius: 30px;
+
+    background: rgba(25, 18, 0, 0.35);
+
+    color: #ffeaa0;
+
+    letter-spacing: 4px;
+
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.message button:hover {
+    background: rgba(255, 196, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Texto pequeño */
+
+.hint {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font: 13px Arial, sans-serif;
+
+    z-index: 3;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+
+    .top-buttons {
+        top: 16px;
+        padding: 0 15px;
+    }
+
+    .top-buttons button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .message {
+        bottom: 6%;
+        padding: 12px;
+    }
+
+    .message p {
+        font-size: 16px;
+    }
+
+    .hint {
+        display: none;
+    }
+}
+```
